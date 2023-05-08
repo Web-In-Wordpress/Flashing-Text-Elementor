@@ -31,7 +31,7 @@ Yes, the flashing text effect is supported on all modern web browsers and mobile
 
 ## Support
 
-If you have any issues or questions about the plugin, please don't hesitate to contact us at support@flashingtextplugin.com.
+If you have any issues or questions about the plugin, please don't hesitate to contact us at support@webinwordpress.com.
 
 ## License
 
