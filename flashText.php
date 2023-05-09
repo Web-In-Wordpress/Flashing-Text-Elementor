@@ -8,7 +8,15 @@ Author: Bharat
 Author URI: https://webinwordpress.com/
 */
 
-class Flashing_Text_Widget extends \Elementor\Widget_Base {
+
+add_action( 'plugins_loaded', 'register_flashing_text_widget' );
+
+function register_flashing_text_widget() {
+    // Check if Elementor is active and loaded
+    if( defined( 'ELEMENTOR_PATH' ) && class_exists( 'Elementor\Widget_Base' ) ) {
+
+
+class Flashing_Text_Widget extends Elementor\Widget_Base {
 
     public function get_name() {
         return 'flashing-text';
@@ -76,9 +84,12 @@ class Flashing_Text_Widget extends \Elementor\Widget_Base {
 }
 
 function register_flashing_text_widget() {
+    
     \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Flashing_Text_Widget() );
 }
 add_action( 'elementor/widgets/widgets_registered', 'register_flashing_text_widget' );
+
+
 
 function enqueue_flashing_text_scripts() {
     wp_enqueue_script(
@@ -90,3 +101,6 @@ function enqueue_flashing_text_scripts() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_flashing_text_scripts' );
+
+ }
+}
